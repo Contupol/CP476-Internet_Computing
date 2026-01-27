@@ -6,4 +6,4 @@ There will be three milestones;
 2. Due Feb 27th
 3. Due April 3rd
 
-Information found @ 
+Information found in CP476 project description file.
