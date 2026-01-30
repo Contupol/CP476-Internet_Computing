@@ -9,3 +9,7 @@ Carlos: Wireframes, Data planning
 Jennifer: User stories
 
 Dibu: Project proposal
+
+Jan 29th
+- Wireframes and data planning finished (Carlos)
+
