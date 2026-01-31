@@ -3,6 +3,7 @@ Jan 27th 6:30 PM
 -  First group meeting, dividing up tasks between group members.
 -  set up github/kanban
 -  selected topic: budget tracking
+-  Approx an hour
 
 Carlos: Wireframes, Data planning
 
