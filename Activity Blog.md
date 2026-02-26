@@ -29,7 +29,7 @@ Feb 25th 9:00 PM (~45 min)
 - will do more peer review of each others' work; increased collaboration 
 - will track/update progress in README.md/kanban more frequently + with more detail
   
-**next meeting scheduled for 4:00 PM**
+**next meeting scheduled for Feb 26th 4:00 PM**
 
 Feb 26th
-- Finished SQLV CREATE TABLE statements, revised Data Planning/Entity Relationships, ER Diagram in progress (- Jennifer)
+- Finished SQL CREATE TABLE statements, revised Data Planning/Entity Relationships, ER Diagram in progress (Jennifer)
