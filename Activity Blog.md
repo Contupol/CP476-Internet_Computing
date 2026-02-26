@@ -32,4 +32,4 @@ Feb 25th 9:00 PM (~45 min)
 **next meeting scheduled for Feb 26th 4:00 PM**
 
 Feb 26th
-- Finished SQL CREATE TABLE statements, revised Data Planning/Entity Relationships, ER Diagram in progress (Jennifer)
+- Finished SQL CREATE TABLE statements, revised Data Planning/Entity Relationships, & ER Diagram (Jennifer)
