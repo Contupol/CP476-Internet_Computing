@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="utf-8">
+   <title>Settings page</title>
+   <link rel="stylesheet" href="styling.css" />
+</head>
+<body>
+    <header>
+        <h1>Settings</h1>
+    </header>
+    <section>
+        <div class="main_section_part">
+            <!--summary statistics of user finances-->
+        </div>
+        <aside>
+            <form method="post" action="./settings.php">
+                <div>
+                    <select name="category">
+                        <option value="">Pick a category</option>
+                    </select><br>
+                    <input type="text" placeholder="Goals">
+                        <!--Goals-->
+                    </input><br>
+                    <select name="period">
+                        <option value="">Pick a time period</option>
+                    </select><br>
+                    <input type="number"><br>
+                    <input type="text" placeholder="Enter goal name">
+                </div>
+                <div>
+                    <input type="button" value="Delete">
+                    <input type="button" value="Expenses List"
+                </div>
+            </form>
+        </aside>
+    </section>
+</body>
