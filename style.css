@@ -87,7 +87,6 @@ label {
 
 #items-management {
     flex: 0 0 35%;
-    padding: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -99,10 +98,10 @@ label {
 
 #pie-graph {
     padding-top: 50px;
-    width: 80%; 
-    max-width: 560px; 
-    aspect-ratio: 1 / 1; 
-    
+    width: 80%;
+    max-width: 560px;
+    aspect-ratio: 1 / 1;
+
     height: auto;
 }
 
@@ -117,7 +116,8 @@ label {
     width: 100%;
     text-align: center;
 }
-.expense-list {
+
+.summary-list {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -126,9 +126,71 @@ label {
     gap: 0 30px;
 }
 
-.expense-list li {
+.summary-list li {
     width: 150px;
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
+}
+
+.new-item-details {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+}
+
+.new-item input {
+    width: 80%;
+}
+
+#expense-table {
+    width: 99%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-radius: 30px;
+}
+
+#expense-table th,
+#expense-table td {
+    border: 1px solid black;
+    padding-top: 5px;
+}
+
+#expense-table th {
+    background-color: rgb(215, 206, 206);
+    font-weight: bold;
+}
+
+#expense-table tbody tr:hover {
+    background-color: grey;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: rgb(242, 78, 78);
+    border-radius: 10px;
+}
+
+.edit-btn {
+    background-color: rgb(255, 255, 61);
+    border-radius: 10px;
+}
+
+.footer-settings {
+    margin-top: auto;
+    width: 100%;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.footer-settings .button {
+    width: 30%;
+    margin: 0;
+    color: black;
+    border-radius: 0;
 }
