@@ -36,11 +36,11 @@ Feb 26th
 
 4:00 PM Meeting
 - checked on progress:
-      - page 1 complete, login/signup links setup
-          - form set up but not committed yet
-      - page 3 in progress, basic buttons implemented
-      - decided on PHP; in progress
-  - how to integrate-- using mock data? 
+  - page 1 complete, login/signup links setup
+      - form set up but not committed yet
+  - page 3 in progress, basic buttons implemented
+  - decided on PHP; in progress
+      - how to integrate-- using mock data? 
 - colour scheme: green (bc money), red
 - will reconvene in chat later today
   
