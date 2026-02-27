@@ -44,3 +44,4 @@ Feb 26th
 - colour scheme: green (bc money), red
 - will reconvene in chat later today
   
+- Finished page 2 with mock data, links to 3rd page (Carlos)
