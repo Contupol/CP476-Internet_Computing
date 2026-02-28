@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Easy Budget - Main Page</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <main class="second-page-layout">
+        <section id="info-graph">
+            <div id="pie-graph" style="margin-top: 10%;">
+                <canvas id="budgetChart"></canvas>
+            </div>
+            <div id="summary-expenses" style="display: flex; flex-direction: column;">
+                <h2><strong>Expenses Summary</strong></h2>
+                <hr style="width: 100%; border: 1px solid black; margin: 0;">
+                <ul class="summary-list"></ul>
+            </div>
+
+            <div style="border-top: 2px solid black; width: 100%; margin-top: 10px;">
+                <h3>Budget tabs</h3>
+            </div>
+        </section>
+        <section id="items-management">
+            <div style="display: flex; flex-direction: column; height: 20%;">
+                <div class="new-item-details">
+                    <div class="new-item">
+                        <label for="itemType">Type:</label>
+                        <input type="text" id="itemType" name="item_type_input">
+                    </div>
+
+                    <div class="new-item">
+                        <label for="itemDate">Date:</label>
+                        <input type="date" id="itemDate" name="item_date_input">
+                    </div>
+
+                    <div class="new-item">
+                        <label for="itemValue">Value:</label>
+                        <input type="number" id="itemValue" name="item_value_input">
+                    </div>
+
+                    <div class="new-item">
+                        <label for="itemValue">Name:</label>
+                        <input type="text" id="itemName" name="item_name_input">
+                    </div>
+                </div>
+                <div>
+                    <button class="button" type="button" style="background-color: grey; width: 100%;">Add
+                        expense</button>
+                </div>
+            </div>
+            <div style="margin-top: 5%; display: flex; flex-direction: column; height: auto;">
+                <h2><strong>Expenses List</strong></h2>
+                <hr style="width: 100%; border: 1px solid black; margin: 0;">
+                <table id="expense-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Value</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expense-tbody"></tbody>
+                </table>
+            </div>
+            <div class="footer-settings">
+                <button class="button" type="button" onclick="thirdPage()">Settings</button>
+            </div>
+        </section>
+    </main>
+    <script src="../script.js"></script>
+</body>
+
+</html>
