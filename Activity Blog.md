@@ -45,3 +45,6 @@ Feb 26th
 - will reconvene in chat later today
   
 - Finished page 2 with mock data, links to 3rd page (Carlos)
+
+Feb 27th
+- Finished pages 1, 2, and 3
