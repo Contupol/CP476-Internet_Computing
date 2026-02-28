@@ -2,4 +2,5 @@
 
 <?php
 
-echo "Welcome to your burdget tracker!";
+echo "Welcome to your budget tracker!";
+$controller = new PageController();
