@@ -62,5 +62,7 @@ CREATE TABLE IF NOT EXISTS Expense (
 ";
 $conn->query($expenseTable);
 
+echo "Tables created successfully!";
+
 $conn->close();
 ?>
