@@ -1,10 +1,8 @@
-body,
-html {
+body, html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
 }
 
 div {
@@ -54,61 +52,57 @@ div {
 
 .second-page-layout {
     display: flex;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
 }
 
 #info-graph {
-    flex: 0 0 65%;
     display: flex;
+    width: 65%;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    row-gap: 10px;
     border-right: 2px solid black;
 }
 
 #items-management {
-    flex: 0 0 35%;
     display: flex;
+    width: 35%;
     flex-direction: column;
 }
 
 #pie-graph canvas {
-    max-width: 100% !important;
-    max-height: 100% !important;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 #pie-graph {
-    padding-top: 50px;
-    width: 80%;
+    width: 100%;
     max-width: 560px;
     aspect-ratio: 1 / 1;
 
-    height: auto;
+    height: 45%;
 }
 
 #summary-expenses {
     width: 80%;
     border: 2px solid black;
     border-radius: 5px;
+    height: auto;
     align-items: flex-start;
 }
 
 #summary-expenses h2 {
     width: 100%;
-    text-align: center;
+    text-align: center;;
 }
 
 .summary-list {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 160px;
-    padding-left: 15px;
-    gap: 0 30px;
 }
 
 .summary-list li {
@@ -123,8 +117,6 @@ div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
-    margin: 0;
 }
 
 .new-item input {
@@ -141,7 +133,6 @@ div {
 #expense-table th,
 #expense-table td {
     border: 1px solid black;
-    padding-top: 5px;
 }
 
 #expense-table th {
@@ -188,7 +179,7 @@ input {
 }
 
 select {
-    width: 92.5%;
+    width: 91.5%;
     padding-bottom: 7px;
     border-radius: 10px;
     margin-bottom: 5px;

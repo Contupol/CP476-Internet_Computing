@@ -4,7 +4,7 @@
    <title>Settings page</title>
    <link rel="stylesheet" href="style.css" />
 </head>
-<body style="display: flex; flex-direction: column;">
+<body style="display: flex; flex-direction: column; height: 95%;">
     <header>
         <h1 style="margin: auto; padding: 10px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Settings</h1>
     </header>
@@ -16,8 +16,8 @@
             </div>
         </div>
         <aside style="width: 30%; border: 1px solid black;">
-            <form method="post" action="./settings.php" >
-                <div style="display: flex; flex-direction: column; row-gap: 0px; align-items: start; margin-left: 50px; margin-right: 30px; margin-top: 80px; margin-bottom: 80px;">
+            <form method="post" action="./settings.php" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                <div style="width: 70%; display: flex; flex-direction: column; margin-top: auto;">
                     <label for="category" style="font-size: 16px;">Pick a budget:</label>
                     <select name="category" id="category">
                         <option value="">Budget</option>
@@ -36,11 +36,11 @@
                     <label for="goal_budget">Goal budget:</label>
                     <input id="goal_budget" type="number"><br>
                 </div>
+                <div style="border-top: 1px solid black; margin-top: auto;">
+                    <input type="button" value="Delete" style="border-width: 0px; border-radius: 0px; margin-bottom: 0px; border-right: 1px solid black;">
+                    <input type="button" value="Expenses List" style="border-width: 0px; border-radius: 0px; margin-bottom: 0px;">
+                </div>
             </form>
-            <div style="border-top: 1px solid black;">
-                <input type="button" value="Delete" style="border-width: 0px; border-radius: 0px; margin-bottom: 0px; height: 100%; border-right: 1px solid black;">
-                <input type="button" value="Expenses List" style="border-width: 0px; border-radius: 0px; margin-bottom: 0px; height: 100%;">
-            </div>
         </aside>
     </section>
 </body>
