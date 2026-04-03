@@ -48,3 +48,12 @@ Feb 26th
 
 Feb 27th
 - Finished pages 1, 2, and 3
+
+April 2nd 8:00pm meeting
+- divided tasks:
+    - carlos: frontend
+    - dibu: backend + functionality
+    - jen: test cases + database
+- updated index.php entry point to matc h github structure
+- decided name for app: budget buddies
+- discussed previous milestone feedback: activity blog/wiki
