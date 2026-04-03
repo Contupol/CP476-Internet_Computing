@@ -9,11 +9,11 @@ function SignupDisplay() {
 }
 
 function secondPage() {
-    window.location.href = "secondPage.html";
+    window.location.href = "index.php?page=second";
 }
 
 function thirdPage() {
-    window.location.href = "settings_page.html"
+    window.location.href = "index.php?page=settings";
 }
 
 const ctx = document.getElementById('budgetChart').getContext('2d');

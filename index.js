@@ -7,8 +7,8 @@ const app = express();
 
 
 const firstPageRoutes = require("./routes/userRoutes.js");
-const secondPageRoutes = requite("./routes/secondRoutes.js")
-const thirdPageRoutes = requite("./routes/thirdRoutes.js")
+const secondPageRoutes = require("./routes/secondRoutes.js")
+const thirdPageRoutes = require("./routes/thirdRoutes.js")
 
 const host = 'localhost';
 const port = 8000;
