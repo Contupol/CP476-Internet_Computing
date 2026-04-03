@@ -56,3 +56,4 @@ April 2nd 8:00pm meeting
     - jen: test cases + database
 - updated index.php entry point to matc h github structure
 - decided name for app: budget buddies
+- discussed previous milestone feedback: activity blog/wiki
