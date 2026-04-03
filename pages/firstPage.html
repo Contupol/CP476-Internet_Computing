@@ -17,13 +17,13 @@
             <hr style="width: 100%; border: 1px solid black; margin: 0;">
 
             <div class="form-group">
-                <label for="email">Enter your email:</label>
-                <input type="email" id="email" name="email">
+                <label for="sign-up-email">Enter your email:</label>
+                <input type="email" id="sign-up-email" name="email">
 
-                <label for="userPassword">Password:</label>
-                <input type="password" id="userPassword" name="password_field_name">
+                <label for="sign-up-password">Password:</label>
+                <input type="password" id="sign-up-password" name="password_field_name">
 
-                <button class="button" type="button" style="background-color: rgb(12, 170, 12); width: 42%;" onclick="secondPage()">Sign
+                <button class="button" type="button" style="background-color: rgb(12, 170, 12); width: 42%;" onclick="handleLogin()">Sign
                     in</button>
 
                 <p class="sign-up-txt">Don't have an account? <a style="color: blue;" onclick="SignupDisplay()">Sign up</a></p>
@@ -50,7 +50,7 @@
                 <label for="userPasswordc">Confirm password:</label>
                 <input type="password" id="userPasswordc" name="passwordc_field">
 
-                <button class="button" type="button" style="background-color:rgb(5, 5, 103); width: 46%; align-self: center;">Create Account</button>
+                <button class="button" type="button" style="background-color:rgb(5, 5, 103); width: 46%; align-self: center;" onclick="handleSignup()">Create Account</button>
 
                 <p class="sign-up-txt" style="align-self: center;">Already have an account?<a onclick="loginDisplay()">Sign in</a></p>
             </div>

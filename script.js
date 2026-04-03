@@ -1,3 +1,20 @@
+// Mock Data for innitial testing - Please replace with actual database calls in the future
+let users = [
+    { email: "test@easybudget.com", password: "123" }
+];
+
+let expenses = [
+    { type: 'Food', value: 150, name: 'Charcoal Steakhouse', date: '2026-01-01' },
+    { type: 'Transport', value: 200, name: 'Bus Pass', date: '2026-01-01' },
+    { type: 'Other', value: 50, name: 'Donation', date: '2026-01-01' },
+    { type: 'Gaming', value: 70, name: 'Steam Card', date: '2026-01-01' },
+    { type: 'Rent', value: 220, name: 'Rent', date: '2026-01-01' },
+    { type: 'Food', value: 20, name: 'Burger King', date: '2026-01-01' },
+    { type: 'School', value: 150, name: 'Science Book', date: '2026-01-01' },
+];
+
+let Budget = 1200;
+
 function loginDisplay() {
     document.getElementById('signup-form').style.display = 'none';
     document.getElementById('login-form').style.display = 'block';
@@ -17,17 +34,6 @@ function thirdPage() {
 }
 
 const ctx = document.getElementById('budgetChart').getContext('2d');
-let expenses = [
-    { type: 'Food', value: 150, name: 'Charcoal Steakhouse', date: '2026-01-01' },
-    { type: 'Transport', value: 200, name: 'Bus Pass', date: '2026-01-01' },
-    { type: 'Other', value: 50, name: 'Donation', date: '2026-01-01' },
-    { type: 'Gaming', value: 70, name: 'Steam Card', date: '2026-01-01' },
-    { type: 'Rent', value: 220, name: 'Rent', date: '2026-01-01' },
-    { type: 'Food', value: 20, name: 'Burger King', date: '2026-01-01' },
-    { type: 'School', value: 150, name: 'Science Book', date: '2026-01-01' },
-];
-
-let Budget = 1200;
 
 const pieChart = new Chart(ctx, {
     type: 'pie',
@@ -93,4 +99,30 @@ function dashboardUpdate() {
 dashboardUpdate();
 
 
+function handleLogin() {
+    const email = document.getElementById('sign-up-email').value; 
+    const pass = document.getElementById('sign-up-password').value;
 
+    const user = users.find(u => u.email === email && u.password === pass);
+
+    if (user) {
+        secondPage(); 
+    } else {
+        alert("Invalid email or password.");
+    }
+}
+
+function handleSignup() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('userPassword').value;
+    const confirm = document.getElementById('userPasswordc').value;
+
+    if (password !== confirm) {
+        alert("Passwords do not match!");
+        return;
+    }
+
+    users.push({ email: email, password: password });
+    alert("Account created! You can now log in.");
+    loginDisplay();
+}
