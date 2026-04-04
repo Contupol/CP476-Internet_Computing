@@ -1,4 +1,6 @@
-const userService = require("../services/userService.js");
+// contains all events tied with a user
+
+const userService = require("../services/user_service.js");
 
 exports.getAllUsers = (req, res) => {
     const users = userService.fetchUsers();

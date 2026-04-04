@@ -5,18 +5,15 @@ const open = require("open");
 const express = require("express");
 const app = express();
 
-
-const firstPageRoutes = require("./routes/userRoutes.js");
-const secondPageRoutes = require("./routes/secondRoutes.js")
-const thirdPageRoutes = require("./routes/thirdRoutes.js")
+const budget_route = require("./routes/budget.js");
+const users_route = require("./routes/users.js")
 
 const host = 'localhost';
 const port = 8000;
 
 app.use(express.json());
-app.use('/api', firstPageRoutes);
-app.use('/api', secondPageRoutes)
-app.use('/api', thirdPageRoutes)
+app.use('/api', budget_route);
+app.use('/api', users_route);
 
 app.listen(host, port, () => {
     console.log(`Server running on ${port}`)
