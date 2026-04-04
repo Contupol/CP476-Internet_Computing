@@ -13,3 +13,7 @@ exports.deleteExpense = (req, res) => {
 exports.updateExpense = (req, res) => {
     res.status(200).json("Empty");
 }
+
+exports.checkExpenses = (req, res) => {
+    res.status(200).json();
+};
