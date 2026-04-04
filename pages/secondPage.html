@@ -17,10 +17,10 @@
             <div id="summary-expenses" style="display: flex; flex-direction: column;">
                 <h2><strong>Expenses Summary</strong></h2>
                 <hr style="width: 100%; border: 1px solid black; margin: 0;">
-                <ul class="summary-list"></ul>
+                <ul class="summary-list summary-grid-layout" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 20px; padding: 10px 0;"></ul>
             </div>
 
-            <div style="border-top: 2px solid black; width: 100%; margin-top: 5px;">
+            <div class="budget-tabs-container">
                 <h3>Budget tabs</h3>
             </div>
         </section>
@@ -48,7 +48,8 @@
                     </div>
                 </div>
                 <div>
-                    <button class="button" type="button" style="background-color: grey; width: 100%;">Add
+                    <button class="button" type="button" style="background-color: grey; width: 100%;"
+                        onclick="addExpense()">Add
                         expense</button>
                 </div>
             </div>
@@ -69,7 +70,7 @@
                 </table>
             </div>
             <div class="footer-settings">
-                <button class="button" type="button" onclick="thirdPage()">Settings</button>
+                <button class="button" type="button" onclick="thirdPage()" style="border: 2px solid; border-color: black;">Settings</button>
             </div>
         </section>
     </main>

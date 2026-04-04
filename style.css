@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -23,7 +27,6 @@ div {
     font-size: 16px;
     cursor: pointer;
     border-radius: 10px;
-    border: 1px solid black;
 }
 
 .form-group {
@@ -63,8 +66,11 @@ div {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    row-gap: 10px;
+    row-gap: 15px;
     border-right: 2px solid black;
+    height: 100vh;
+    padding-bottom: 20px;
+    box-sizing: border-box;
 }
 
 #items-management {
@@ -87,22 +93,17 @@ div {
 }
 
 #summary-expenses {
-    width: 80%;
+    width: 90%;
     border: 2px solid black;
     border-radius: 5px;
     height: auto;
     align-items: flex-start;
+    padding: 10px;
 }
 
 #summary-expenses h2 {
     width: 100%;
     text-align: center;;
-}
-
-.summary-list {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
 }
 
 .summary-list li {
@@ -199,4 +200,26 @@ footer {
     bottom: 0;
     width: 100%;
     height: 1.5rem; 
+}
+
+.summary-grid-layout li {
+    border-left: 1px solid black;
+    padding-left: 15px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+}
+
+.summary-grid-layout li:nth-child(4n+1) {
+    border-left: none;
+    padding-left: 0;
+}
+
+.budget-tabs-container {
+    margin-top: auto;
+    width: 90%;
+    border: 2px solid black;
+    border-radius: 8px;
+    text-align: center;
+    padding: 5px 15px;
+    height: 50px;
 }

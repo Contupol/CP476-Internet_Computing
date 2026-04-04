@@ -1,4 +1,5 @@
 // Mock Data for innitial testing - Please replace with actual database calls in the future
+//[user, password, Budget, [expenses]]
 let users = [
     { email: "test@easybudget.com", password: "123" }
 ];
@@ -125,4 +126,84 @@ function handleSignup() {
     users.push({ email: email, password: password });
     alert("Account created! You can now log in.");
     loginDisplay();
+}
+
+function addExpense() {
+    const typeInput = document.getElementById('itemType');
+    const dateInput = document.getElementById('itemDate');
+    const valueInput = document.getElementById('itemValue');
+    const nameInput = document.getElementById('itemName');
+
+    if (!typeInput.value || !dateInput.value || !valueInput.value || !nameInput.value) {
+        alert("Please fill in all fields to add an expense.");
+        return;
+    }
+
+    const newExpense = {
+        type: typeInput.value,
+        value: parseFloat(valueInput.value),
+        name: nameInput.value,
+        date: dateInput.value
+    };
+
+    expenses.push(newExpense);
+
+    typeInput.value = '';
+    dateInput.value = '';
+    valueInput.value = '';
+    nameInput.value = '';
+
+    dashboardUpdate();
+}
+
+function deleteExpense(index) {
+    if (confirm("Are you sure you want to delete this expense?")) {
+        expenses.splice(index, 1);
+        dashboardUpdate();
+    }
+}
+
+let editIndex = null;
+
+function editExpense(index) {
+    const item = expenses[index];
+    editIndex = index;
+
+    document.getElementById('itemType').value = item.type;
+    document.getElementById('itemDate').value = item.date;
+    document.getElementById('itemValue').value = item.value;
+    document.getElementById('itemName').value = item.name;
+
+    const actionBtn = document.querySelector('.new-item-details + div .button');
+    actionBtn.innerText = "Save Changes";
+    actionBtn.setAttribute('onclick', 'saveEdit()');
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function saveEdit() {
+    if (editIndex === null) return;
+
+    expenses[editIndex] = {
+        type: document.getElementById('itemType').value,
+        date: document.getElementById('itemDate').value,
+        value: parseFloat(document.getElementById('itemValue').value),
+        name: document.getElementById('itemName').value
+    };
+
+    resetForm();
+    dashboardUpdate();
+}
+
+function resetForm() {
+    editIndex = null;
+    
+    document.getElementById('itemType').value = '';
+    document.getElementById('itemDate').value = '';
+    document.getElementById('itemValue').value = '';
+    document.getElementById('itemName').value = '';
+
+    const actionBtn = document.querySelector('.new-item-details + div .button');
+    actionBtn.innerText = "Add expense";
+    actionBtn.setAttribute('onclick', 'addExpense()');
 }
