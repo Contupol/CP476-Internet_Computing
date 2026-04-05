@@ -1,6 +1,5 @@
 <?php
-// Database connection
-$servername = "mysql_db";
+$servername = "localhost"
 $username = "app_user";
 $password = "app_pass";
 $database = "app_db";
@@ -11,7 +10,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Create tables if not exists
+// Users table
 $userTable = "
 CREATE TABLE IF NOT EXISTS users (
     uID INT AUTO_INCREMENT PRIMARY KEY,
@@ -19,10 +18,10 @@ CREATE TABLE IF NOT EXISTS users (
     LastName VARCHAR(50) NOT NULL,
     Email VARCHAR(50) NOT NULL UNIQUE,
     Password VARCHAR(255) NOT NULL
-)
-";
-$conn->query($usersTable);
+)";
+$conn->query($userTable);
 
+// Budget table
 $budgetTable = "
 CREATE TABLE IF NOT EXISTS Budget (
     bID INT AUTO_INCREMENT PRIMARY KEY,
@@ -32,20 +31,20 @@ CREATE TABLE IF NOT EXISTS Budget (
     Goal DECIMAL(10,2),
     Period VARCHAR(50),
     FOREIGN KEY (uID) REFERENCES users(uID) ON DELETE CASCADE
-)
-";
+)";
 $conn->query($budgetTable);
 
+// Category table
 $categoryTable = "
 CREATE TABLE IF NOT EXISTS Category (
     cID INT AUTO_INCREMENT PRIMARY KEY,
     uID INT NOT NULL,
     cName VARCHAR(20),
     FOREIGN KEY (uID) REFERENCES users(uID) ON DELETE CASCADE
-)
-";
+)";
 $conn->query($categoryTable);
 
+// Expense table
 $expenseTable = "
 CREATE TABLE IF NOT EXISTS Expense (
     eID INT AUTO_INCREMENT PRIMARY KEY,
@@ -58,11 +57,6 @@ CREATE TABLE IF NOT EXISTS Expense (
     FOREIGN KEY (bID) REFERENCES Budget(bID) ON DELETE CASCADE,
     FOREIGN KEY (cID) REFERENCES Category(cID) ON DELETE CASCADE,
     FOREIGN KEY (uID) REFERENCES users(uID) ON DELETE CASCADE
-)
-";
+)";
 $conn->query($expenseTable);
-
-echo "Tables created successfully!";
-
-$conn->close();
 ?>
