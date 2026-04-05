@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>Settings page</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1"></script>
     <link rel="stylesheet" href="../style.css" />
 </head>
 
@@ -17,7 +19,7 @@
         <div style="width: 70%; border: 1px solid black;">
             <!--summary statistics of user finances-->
             <div style="height: 90%; width: 95%; border: 1px solid black">
-
+                <canvas id="savingsTrendChart"></canvas>
             </div>
         </div>
         <aside style="width: 30%; border: 1px solid black;">
@@ -36,17 +38,18 @@
                     </input><br>
                     <label for="period">Change period:</label>
                     <select name="goal_period" id="period" style="text-align: center;">
-                        <option value="">Period</option>
                         <option value="Weekly">Weekly</option>
+                        <option value="Monthly">Monthly</option>
+                        <option value="Yearly">Yearly</option>
                     </select>
                     <label for="goal_budget">Goal budget:</label>
                     <input id="goal_budget" type="number"><br>
                 </div>
                 <div style="display: flex; flex-direction: column; margin-top: auto;">
                     <button class="button" type="button" style="background-color: grey; width: 100%;"
-                        onclick="CreateBudget()">Create Budget</button>
+                        onclick="createBudget()">Create Budget</button>
                     <button class="button" type="button" style="background-color: grey; width: 100%;"
-                        onclick="DeleteBudget()">Delete Budget</button>
+                        onclick="deleteBudget()">Delete Budget</button>
                     <button class="button" type="button" style="background-color: grey; width: 100%;"
                         onclick="secondPage()">Main Page</button>
 
