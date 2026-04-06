@@ -1,4 +1,4 @@
-const userService = require("../services/secondService.js");
+const userService = require("../services/budget_service.js");
 
 // Not implemented yet
 

@@ -129,18 +129,18 @@ function dashboardUpdate() {
 dashboardUpdate();
 
 
-function handleLogin() {
-    const email = document.getElementById('sign-up-email').value;
-    const pass = document.getElementById('sign-up-password').value;
+// function handleLogin() {
+//     const email = document.getElementById('sign-up-email').value;
+//     const pass = document.getElementById('sign-up-password').value;
 
-    const user = users.find(u => u.email === email && u.password === pass);
+//     const user = users.find(u => u.email === email && u.password === pass);
 
-    if (user) {
-        secondPage();
-    } else {
-        alert("Invalid email or password.");
-    }
-}
+//     if (user) {
+//         secondPage();
+//     } else {
+//         alert("Invalid email or password.");
+//     }
+// }
 
 function handleSignup() {
     const email = document.getElementById('email').value;

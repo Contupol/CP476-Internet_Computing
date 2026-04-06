@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Easy Budget</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body style="display: flex; flex-direction: column; justify-content: center;">
+    <section>
+        <div>
+            <img src="images/budget.png" style="width: 10%; margin-bottom: 30px;">
+        </div>
+    </section>
+    <section>
+        <form method="POST" id="login-form" style="border: 2px solid black; border-radius: 5px; width: 30%; display: block; margin-left: auto; margin-right: auto;">
+            <H1 style="text-align: center; font-size: 22px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"><strong>Welcome to Easy Budget!</strong></H1>
+            <hr style="width: 100%; border: 1px solid black; margin: 0;">
+
+            <div class="form-group">
+                <label for="sign-up-email">Enter your email:</label>
+                <input type="email" id="sign-up-email" name="email">
+
+                <label for="sign-up-password">Password:</label>
+                <input type="password" id="sign-up-password" name="password_field_name">
+
+                <input formaction="/api/auth/sign_in" class="button" type="submit" style="background-color: rgb(12, 170, 12); width: 42%;" value="Sign in"/>
+                <p type="button" class="sign-up-txt">Don't have an account? <input formaction="/api/auth/sign_up" type="submit" style="color: blue;" value="Sign up"/></p>
+            </div>
+        </form>
+    </section>
+
+    <script src="../script.js"></script>
+</body>
+<footer>
+<a href="https://www.flaticon.com/free-icons/budget" title="budget icons">Budget icons created by nangicon - Flaticon</a>
+</footer>
+</html>

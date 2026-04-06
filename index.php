@@ -4,7 +4,7 @@ $page = $_GET['page'] ?? 'first';
 
 switch($page) {
     case 'first':
-        include 'pages/firstPage.html';
+        include 'pages/sign_in.html';
         break;
     case 'second':
         include 'pages/secondPage.html';
