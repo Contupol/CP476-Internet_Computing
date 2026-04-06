@@ -19,7 +19,7 @@ exports.signIn = async (req, res) => {
         }
         const user = await user_model.get_user(email);
         console.log(user);
-        if (user) {
+        if (user != -1) {
             const match = await bcrypt.compare(password, user[0].password);
             if (match) {
                 res.status(202).send("Logging in");

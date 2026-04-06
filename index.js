@@ -26,3 +26,7 @@ app.post('/back', (req, res) => {
 app.listen(port, () => {
     console.log(`Server running on ${port}`);
 });
+
+process.on('uncaughtException', (err) => {
+    console.error("UNCAUGHT ERROR:", err);
+});
