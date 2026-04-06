@@ -11,6 +11,7 @@ const users_route = require("./routes/users.js")
 const host = 'localhost';
 const port = 8000;
 
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 
 app.use('/api', budget_route);
