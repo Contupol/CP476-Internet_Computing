@@ -1,27 +1,38 @@
 const db = require('./db.js');
+const bcrypt = require('bcrypt');
 
 async function get_user(email) {
-    console.log("B");
     try {
         const [rows] = await db.execute(
             'SELECT * FROM users WHERE Email = ?',
             [email]
         );
-        console.log('C');
         if (rows.length > 0) {
             return rows[0];
         } else {
-            return -1;
+            return null;
         }
     } catch (err) {
         console.log(err);
         throw err;
     }
-    console.log("complete");
 }
 
-async function create_user(email, password) {
-
+async function create_user(fname, lname, email, pass) {
+    try {
+        const hashed_pass = await bcrypt.hash(pass, 10);
+        const [result] = await db.query(
+            `INSERT into users (uName, LastName, Email, Password)
+            VALUES(?, ?, ?, ?)`,
+            [fname, lname, email, hashed_pass]
+        )
+        return { success: true, message: "Successful account creation.", user: result};
+    } catch (err) {
+        if (err.code === 'ER_DUP_ENTRY') {
+            return { success: false, message: "Duplicate email."};
+        }
+        throw err;
+    }
 }
 
-module.exports = {get_user}
+module.exports = {get_user, create_user}
