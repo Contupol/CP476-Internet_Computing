@@ -57,3 +57,7 @@ April 2nd 8:00pm meeting
 - updated index.php entry point to matc h github structure
 - decided name for app: budget buddies
 - discussed previous milestone feedback: activity blog/wiki
+
+April 6th
+- Final commits made
+- Functionality is unfinished as of yet
