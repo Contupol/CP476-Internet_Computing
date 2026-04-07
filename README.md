@@ -8,6 +8,8 @@ There will be three milestones;
 
 Information found in CP476 project description file.
 
-# How to run index.php
-- in the terminal, run: 'php -S localhost:8000'
+# How to run index.js
+- PREREQUISITES
+  - Need node.js and MYSQL installed (and set up for PATH)
+- in the terminal in the directory with the index.js file run 'node index.js'
 - server will be running on <u>http://localhost:8000/index.php</u>
