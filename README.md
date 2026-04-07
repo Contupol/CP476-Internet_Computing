@@ -8,6 +8,8 @@ There will be three milestones;
 
 Information found in CP476 project description file.
 
+'Activity.md' is found in the Misc sub-directory.
+
 # How to run index.js
 - PREREQUISITES
   - Need node.js and MYSQL installed (and set up for PATH)
