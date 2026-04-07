@@ -12,4 +12,4 @@ Information found in CP476 project description file.
 - PREREQUISITES
   - Need node.js and MYSQL installed (and set up for PATH)
 - in the terminal in the directory with the index.js file run 'node index.js'
-- server will be running on <u>http://localhost:8000/index.php</u>
+- server will be running on <u>http://localhost:8000/</u>
