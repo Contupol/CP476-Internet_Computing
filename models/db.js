@@ -27,8 +27,8 @@ async function init_database() {
             CREATE TABLE IF NOT EXISTS Budget (
                 bID INT AUTO_INCREMENT PRIMARY KEY,
                 uID INT NOT NULL,
-                bName VARCHAR(50),
-                TotalAmt DECIMAL(10,2),
+                bName VARCHAR(50) NOT NULL UNIQUE,
+                Description VARCHAR(255),
                 Goal DECIMAL(10,2),
                 Period VARCHAR(50),
                 FOREIGN KEY (uID) REFERENCES users(uID) ON DELETE CASCADE

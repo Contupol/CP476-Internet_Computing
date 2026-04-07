@@ -1,80 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
-    <title>Easy Budget - Main Page</title>
-    <link rel="stylesheet" href="/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Settings page</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1"></script> -->
+    <link rel="stylesheet" href="../style.css" />
 </head>
 
-<body>
-    <main class="second-page-layout">
-        <section id="info-graph">
-            <div id="pie-graph" style="margin-top: 10px;">
-                <canvas id="budgetChart"></canvas>
+<body style="display: flex; flex-direction: column; height: 95%;">
+    <header>
+        <h1
+            style="margin: auto; padding: 10px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            Settings</h1>
+    </header>
+    <section
+        style="display: flex; flex-direction: row; height: 100%; border: 1px solid black; margin-left: 20px; margin-right: 20px;">
+        <div style="width: 70%; border: 1px solid black;">
+            <!--summary statistics of user finances-->
+            <div style="height: 90%; width: 95%; border: 1px solid black">
+                <canvas id="savingsTrendChart"></canvas>
             </div>
-            <div id="summary-expenses" style="display: flex; flex-direction: column;">
-                <h2><strong>Expenses Summary</strong></h2>
-                <hr style="width: 100%; border: 1px solid black; margin: 0;">
-                <ul class="summary-list summary-grid-layout" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 20px; padding: 10px 0;"></ul>
-            </div>
+        </div>
+        <aside style="width: 30%; border: 1px solid black;">
+            <form method="POST" style="display: flex">
+                <label for="category" style="font-size: 16px;">Pick a budget:</label>
+                <select name="category" id="category" style="text-align: center;">
+                    <option value="">Budget</option>
+                </select>
+                <script>
+                    const categorySelect = document.getElementById('category');
 
-            <div class="budget-tabs-container">
-                <h3>Budget tabs</h3>
-            </div>
-        </section>
-        <section id="items-management">
-            <div style="display: flex; flex-direction: column; height: 20%;">
-                <div class="new-item-details">
-                    <div class="new-item">
-                        <label for="itemType">Type:</label>
-                        <input type="text" id="itemType" name="item_type">
-                    </div>
-
-                    <div class="new-item">
-                        <label for="itemDate">Date:</label>
-                        <input type="date" id="itemDate" name="item_date">
-                    </div>
-
-                    <div class="new-item">
-                        <label for="itemValue">Value:</label>
-                        <input type="number" id="itemValue" name="item_value">
-                    </div>
-
-                    <div class="new-item">
-                        <label for="itemValue">Name:</label>
-                        <input type="text" id="itemName" name="item_name">
-                    </div>
+                    fetch('/home/budget_list')
+                        .then(response => response.json())
+                        .then(budgets => {
+                            budgets.forEach(budget => {
+                                const option = document.createElement('option');
+                                option.value = budget.bID;
+                                option.textContent = budget.bName;
+                                categorySelect.appendChild(option);
+                            });
+                        })
+                        .catch(err => console.error('Error fetching budgets:', err));
+                </script>
+                <input formaction="/home/budget_delete" type="submit" class="button"
+                    style="background-color: grey; width: 100%;" value="Delete Budget"></input>
+            </form>
+            <form method="POST" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                <div style="width: 70%; display: flex; flex-direction: column; margin-top: auto;">
+                    <label for="goal_name">Goal name:</label>
+                    <input type="text" id="goal_name" name="name">
+                    <label for="goal_desc">Goal description:</label>
+                    <input type="text" id="goal_desc" style="width: 90%; border-radius: 10px;" name="description">
+                    <!--Goals-->
+                    </input><br>
+                    <label for="period">Change period:</label>
+                    <select id="period" style="text-align: center;" name="period">
+                        <option value="">Select period</option>
+                        <option value="Weekly">Weekly</option>
+                        <option value="Monthly">Monthly</option>
+                        <option value="Yearly">Yearly</option>
+                    </select>
+                    <label for="goal_budget">Goal budget:</label>
+                    <input id="goal_budget" type="number" name="value"><br>
                 </div>
-                <div>
-                    <button class="button" type="button" style="background-color: grey; width: 100%;"
-                        onclick="addExpense()">Add
-                        expense</button>
+                <div style="display: flex; flex-direction: column; margin-top: auto; margin-bottom: auto;">
+                    <input formaction="/home/budget_create" type="submit" class="button"
+                        style="background-color: grey; width: 100%;" value="Create Budget"></input>
+                    <input formaction="/home/data" class="button" type="submit" style="background-color: grey; width: 100%;" value="Main Page"></input>
+
                 </div>
-            </div>
-            <div style="margin-top: 5%; display: flex; flex-direction: column; height: auto;">
-                <h2><strong>Expenses List</strong></h2>
-                <hr style="width: 100%; border: 1px solid black; margin: 0;">
-                <table id="expense-table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Type</th>
-                            <th>Value</th>
-                            <th>Date</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="expense-tbody"></tbody>
-                </table>
-            </div>
-            <div class="footer-settings">
-                <button class="button" type="button" onclick="thirdPage()" style="border: 2px solid; border-color: black;">Settings</button>
-            </div>
-        </section>
-    </main>
-    <script src="../script.js"></script>
+            </form>
+        </aside>
+    </section>
 </body>
 
 </html>
